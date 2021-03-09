@@ -23,13 +23,13 @@ RUN mkdir .npm && chmod 777 .npm &&\
 RUN npm install bower -g --loglevel error &&\
   npm install gulp -g --loglevel error
 
-COPY ./node_modules $HOME/node_modules
-COPY ./client $HOME/client
-COPY ./super $HOME/super
-COPY ./school $HOME/school
-COPY ./config $HOME/config
-COPY ./gulpfile.js ./package.json $HOME/
-COPY ./laradock/gulp-console/docker.json $HOME/config/docker.json
+COPY ${BASE_PATH}/node_modules $HOME/node_modules
+COPY ${BASE_PATH}/client $HOME/client
+COPY ${BASE_PATH}/super $HOME/super
+COPY ${BASE_PATH}/school $HOME/school
+COPY ${BASE_PATH}/config $HOME/config
+COPY ${BASE_PATH}/gulpfile.js ./package.json $HOME/
+COPY ${BASE_PATH}/laradock/gulp-console/docker.json $HOME/config/docker.json
 
 RUN chown -R tms:tms $HOME/*
 
@@ -41,13 +41,13 @@ RUN npm install --loglevel error
 USER root
 RUN cd $HOME/client && bower install --allow-root && bower update --allow-root
 
-COPY ./node_modules $HOME/node_modules
-COPY ./client $HOME/client
-COPY ./super $HOME/super
-COPY ./school $HOME/school
-COPY ./config $HOME/config
-COPY ./gulpfile.js ./package.json $HOME/
-COPY ./laradock/gulp-console/docker.json $HOME/config/docker.json
+COPY ${BASE_PATH}/node_modules $HOME/node_modules
+COPY ${BASE_PATH}/client $HOME/client
+COPY ${BASE_PATH}/super $HOME/super
+COPY ${BASE_PATH}/school $HOME/school
+COPY ${BASE_PATH}/config $HOME/config
+COPY ${BASE_PATH}/gulpfile.js ./package.json $HOME/
+COPY ${BASE_PATH}/laradock/gulp-console/docker.json $HOME/config/docker.json
 
 RUN chown -R tms:tms $HOME
 
