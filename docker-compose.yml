@@ -32,6 +32,9 @@ services:
             - ../super:/home/tms/super
             - ../config:/home/tms/config
             - ../gulpfile.js:/home/tms/gulpfile.js
+            - ../gulp_helpers.js:/home/tms/gulp_helpers.js
+            - ../gulp_tasks.js:/home/tms/gulp_tasks.js
+            - ../gulp_globals.js:/home/tms/gulp_globals.js
             - ./gulp-console/docker.json:/home/tms/config/docker.json
         volumes_from:
             - volumes_source

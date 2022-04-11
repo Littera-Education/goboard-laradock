@@ -29,6 +29,9 @@ COPY ./super $HOME/super
 COPY ./school $HOME/school
 COPY ./config $HOME/config
 COPY ./gulpfile.js ./package.json $HOME/
+COPY ./gulp_helpers.js $HOME/
+COPY ./gulp_tasks.js $HOME/
+COPY ./gulp_globals.js $HOME/
 COPY ./laradock/gulp-console/docker.json $HOME/config/docker.json
 
 RUN chown -R tms:tms $HOME/*
@@ -47,6 +50,9 @@ COPY ./super $HOME/super
 COPY ./school $HOME/school
 COPY ./config $HOME/config
 COPY ./gulpfile.js ./package.json $HOME/
+COPY ./gulp_helpers.js $HOME/
+COPY ./gulp_tasks.js $HOME/
+COPY ./gulp_globals.js $HOME/
 COPY ./laradock/gulp-console/docker.json $HOME/config/docker.json
 
 RUN chown -R tms:tms $HOME
