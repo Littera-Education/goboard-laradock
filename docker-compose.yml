@@ -206,7 +206,7 @@ services:
         image: tianon/true
         volumes:
             - ../server:/var/www/tms
-            - ./workspace/composer.lock:/var/www/tms/composer.lock
+            #- ./workspace/composer.lock:/var/www/tms/composer.lock
             - ./workspace/dotenv:/var/www/tms/.env
 
 ### Databases Data Container ################################
