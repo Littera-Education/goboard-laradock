@@ -10,7 +10,7 @@
 #    https://hub.docker.com/r/laradock/php-fpm/tags/
 #
 
-FROM laradock/php-fpm:7.0--1.2
+FROM laradock/php-fpm:latest-7.1
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
@@ -149,7 +149,7 @@ RUN if [ ${CODEIGNITER} = true ]; then \
 ADD ./laravel.ini /usr/local/etc/php/conf.d
 ADD ./laravel.pool.conf /usr/local/etc/php-fpm.d/
 
-RUN rm -r /var/lib/apt/lists/*
+#RUN rm -r /var/lib/apt/lists/*
 
 RUN usermod -u 1000 www-data
 
